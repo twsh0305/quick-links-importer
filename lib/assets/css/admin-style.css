@@ -1,0 +1,168 @@
+/* 隐藏CSF的保存按钮和警告提示 */
+.wxs-no-save .csf-buttons,
+.wxs-no-save .csf-save-warn,
+.wxs-no-save .csf-header .csf-buttons,
+.wxs-no-save .csf-header-right,
+.wxs-no-save .csf-header-left .csf-buttons,
+.wxs-no-save .csf-header-inner .csf-buttons,
+.wxs-no-save .csf-footer .csf-buttons,
+.wxs-no-save .csf-footer button,
+.wxs-no-save .csf-footer input[type="submit"],
+.wxs-no-save button[name="csf_transient[save]"],
+.wxs-no-save input[name="csf_transient[save]"],
+.wxs-no-save input[name*="[_nonce][save]"],
+.wxs-no-save .csf-save,
+.wxs-no-save .csf-top-save,
+.wxs-no-save .csf-save-ajax,
+.wxs-no-save .csf-submit-button,
+.wxs-no-save .csf-form-submit,
+.wxs-no-save .button-primary[type="submit"],
+.wxs-no-save input.button-primary,
+.wxs-no-save .csf-section-footer,
+.wxs-no-save .csf-section-footer .csf-buttons,
+.wxs-no-save .csf-menu {
+    display: none !important;
+}
+
+/* WXS水印 */
+.csf-theme-light .csf-header-inner::before {
+    content: 'WXS' !important;
+    position: absolute;
+    left: 10%;
+    color: hsla(0, 0%, 100%, 0.05);
+    font-weight: 800;
+    font-style: oblique;
+    font-size: 100px;
+    bottom: 20%;
+    transform: rotateY(15deg) rotate(-5deg) scaleX(1.5);
+    z-index: 0;
+}
+
+/* 底部版本信息区域样式 */
+.wxs-no-save .csf-footer {
+    border-top: 1px solid #e5e5e5;
+    padding: 15px 20px;
+    background: #f9f9f9;
+}
+
+/* 移除顶部的粘性头部效果 */
+.wxs-no-save .csf-header {
+    position: relative !important;
+}
+
+/* 预览和结果区域 */
+#wxs-preview-area,
+#wxs-result-area {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 4px;
+    border: 1px solid #e5e5e5;
+}
+
+#wxs-preview-area h3,
+#wxs-result-area h3 {
+    margin-top: 0;
+    font-size: 16px;
+    color: #23282d;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* 预览表格 */
+#wxs-preview-table {
+    margin-top: 15px;
+    background: #fff;
+}
+
+#wxs-preview-table img {
+    max-width: 50px;
+    max-height: 30px;
+    vertical-align: middle;
+    border-radius: 2px;
+}
+
+#wxs-preview-table td {
+    vertical-align: middle;
+    word-break: break-all;
+}
+
+#wxs-preview-table th {
+    background: #f1f1f1;
+}
+
+/* 按钮组 */
+.wxs-button-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.wxs-button-group .button-large {
+    padding: 8px 20px !important;
+    font-size: 14px !important;
+    height: auto !important;
+}
+
+/* 加载状态 */
+#wxs-loading .spinner {
+    margin: 0 5px 0 0;
+}
+
+/* 结果区域 */
+#wxs-result .notice {
+    margin: 10px 0;
+}
+
+#wxs-result ul {
+    margin: 10px 0 0 20px;
+}
+
+#wxs-result li {
+    margin-bottom: 5px;
+}
+
+/* CSF框架内的textarea样式增强 */
+.csf-field-textarea textarea[data-depend-id="json_data"] {
+    min-height: 300px;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* 帮助面板样式 */
+.wxs-help-panel h2 {
+    margin-top: 0;
+}
+
+.wxs-help-panel ul {
+    margin-left: 20px;
+}
+
+.wxs-help-panel code {
+    background: #f0f0f0;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Consolas', 'Monaco', monospace;
+}
+
+.wxs-help-panel ol li {
+    margin-bottom: 8px;
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 782px) {
+    .wxs-button-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .wxs-button-group .button-large {
+        width: 100%;
+        text-align: center;
+    }
+    
+    #wxs-preview-table {
+        font-size: 12px;
+    }
+}
